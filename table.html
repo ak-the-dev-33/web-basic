@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Styled Table</title>
+<style>
+    /* Table Styles */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+    th {
+        background-color: #f2f2f2;
+    }
+    tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+    /* Responsive Layout */
+    @media screen and (max-width: 600px) {
+        table {
+            border: none;
+            width: 100%;
+        }
+        th, td {
+            border: none;
+            display: block;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+            display: none;
+        }
+        tr {
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 5px;
+        }
+        tr:nth-child(even) {
+            background-color: transparent;
+        }
+        td:before {
+            content: attr(data-label);
+            font-weight: bold;
+        }
+    }
+</style>
+</head>
+<body>
+
+<table>
+    <thead>
+        <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Email</th>
+            <th>Age</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td data-label="Firstname">John</td>
+            <td data-label="Lastname">Doe</td>
+            <td data-label="Email">john@example.com</td>
+            <td data-label="Age">30</td>
+        </tr>
+        <tr>
+            <td data-label="Firstname">Jane</td>
+            <td data-label="Lastname">Doe</td>
+            <td data-label="Email">jane@example.com</td>
+            <td data-label="Age">28</td>
+        </tr>
+        <tr>
+            <td data-label="Firstname">Tom</td>
+            <td data-label="Lastname">Smith</td>
+            <td data-label="Email">tom@example.com</td>
+            <td data-label="Age">35</td>
+        </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
